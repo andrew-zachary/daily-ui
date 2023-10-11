@@ -1,0 +1,30 @@
+html {
+    font-size: 62.5%;
+}
+
+// mixins
+@mixin withRtl($property, $ltr-value, $rtl-value) {
+    & {
+        #{$property}: $ltr-value !important;
+    }
+
+    .is-rtl & {
+        #{$property}: $rtl-value !important;
+    }
+}
+
+// LTR-RTL padding
+.right-left-padding-1 {
+    @include withRtl(padding, 0 1rem 0 0, 0 0 0 1rem);
+}
+.left-right-padding-1 {
+    @include withRtl(padding, 0 0 0 1rem, 0 1rem 0 0);
+}
+
+// LTR-RTL margin
+.right-left-margin-1 {
+    @include withRtl(margin, 0 1rem 0 0, 0 0 0 1rem);
+}
+.left-right-margin-1 {
+    @include withRtl(margin, 0 0 0 1rem, 0 1rem 0 0);
+}

@@ -1,0 +1,84 @@
+---
+import BaseLayout from "../../layouts/base.astro"
+---
+<BaseLayout title="Menu Style 1">
+    <nav>
+
+        <div 
+            id="nav-box"
+            class="px-2 py-4
+            max-w-screen-lg mx-auto
+            grid grid-cols-[min-content_1fr_min-content] grid-rows-[min-content_1fr]
+            items-center
+            md:grid-cols-[max-content_1fr_min-content]"
+        >
+  
+            <label 
+                for="trigger" 
+                class="w-[3.5rem] h-[3.5rem]
+                md:hidden"
+            >
+  
+                <div
+                    id="bars"
+                    class="h-full flex flex-col justify-between cursor-pointer
+                    [&_span]:h-[0.5rem] [&_span]:bg-secondary"
+                >
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </label>
+  
+            <input id="trigger" type="checkbox" class="peer hidden">
+  
+            <div id="logo" class="justify-self-center w-[15rem] md:w-full md:col-start-1 md:col-end-2">
+                <img src="/logo.svg" alt="">
+            </div>
+  
+            <div
+                id="searching"
+                class="w-[3rem] cursor-pointer
+                md:col-start-3 md:col-end-4"
+            >
+                <img src="/search.svg" alt="" />
+            </div>
+  
+            <div
+                id="menu-list"
+                class="pt-4 right-left-margin-1
+                row-span-2 grid grid-rows-[0fr] col-span-full
+                transition-[grid-template-rows] duration-300 ease-in-out
+                peer-checked:grid-rows-[1fr]
+                md:row-start-1 md:row-end-2 md:col-start-2 md:col-end-3
+                md:grid-rows-[1fr]
+                md:pt-0"
+            >
+  
+                <ul
+                    class="text-3xl capitalize font-bold
+                    overflow-hidden
+                    [&_li]:border-b-4 [&_li]:border-primary [&_li:hover]:border-secondary
+                    [&_li]:mb-4
+                    md:flex md:justify-end md:[&_li]:!m-0"
+                >
+                    <li class="px-2">
+                        <a class="block" href="">home</a>
+                    </li>
+                    <li class="px-2">
+                        <a class="block" href="">pricing</a>
+                    </li>
+                    <li class="px-2">
+                        <a class="block" href="">blog</a>
+                    </li>
+                    <li class="px-2">
+                        <a class="block" href="">our team</a>
+                    </li>
+                    <li class="px-2">
+                        <a class="block" href="">contact us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</BaseLayout>
